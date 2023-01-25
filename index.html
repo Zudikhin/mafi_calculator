@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <meta name="author" content="Yuriy Zudikhin" />
+    <link rel="stylesheet" href="css/slick.css" />
+    <link rel="stylesheet" href="css/nouislider.css">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+
+    <div class="calculator">
+      <div class="calculator_main">
+        <div class="calculator_main_left">
+          <h3>Продажа МАФов</h3>
+          <div class="calculator_main_left_item">
+            <h5>Закупочная стоимость</h5>
+            <div class="calculator_main_left_item_wrap">
+              <div class="calculator_main_left_item_wrap_range" id="purchase"></div>
+              <div class="calculator_main_left_item_wrap_result">
+                <span id="purchaseText">2 000 000 ₽</span>
+              </div>
+            </div>
+          </div>
+          <div class="calculator_main_left_item">
+            <h5>Ваша наценка</h5>
+            <div class="calculator_main_left_item_wrap">
+              <div class="calculator_main_left_item_wrap_range" id="margin"></div>
+              <div class="calc_percent calculator_main_left_item_wrap_result">
+                <span id="marginText">35%</span>
+              </div>
+              <p>Мы не ограничиваем партнеров, многие делают наценку от 30 до 70%</p>
+            </div>
+          </div>
+          <div class="calculator_main_left_item last">
+            <h5>Продажа 1 площадки</h5>
+            <div class="calculator_main_left_item_wrap">
+              <div class="calculator_main_left_item_wrap_result">
+                <span id="saleText">2 700 000 ₽</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calculator_main_right">
+          <h3>Монтаж МАФов</h3>
+
+          <div class="calculator_main_right_item">
+            <h5>Ваша наценка для клиента на монтаж</h5>
+            <div class="calculator_main_right_item_wrap">
+              <div class="calculator_main_right_item_wrap_range" id="customerMargin"></div>
+              <div class="calc_percent calculator_main_right_item_wrap_result">
+                <span id="customerMarginText">20%</span>
+              </div>
+              <p>В среднем на монтаж делают от 15 до 25% от стоимости МАФов</p>
+            </div>
+          </div>
+
+          <div class="calculator_main_right_item">
+            <h5>Затраты на бригаду и расходные материалы</h5>
+            <div class="calculator_main_right_item_wrap">
+              <div class="calculator_main_right_item_wrap_range" id="brigade"></div>
+              <div class="calc_percent calculator_main_right_item_wrap_result">
+                <span id="brigadeText">20%</span>
+              </div>
+              <p>Колеблются <br> от 30 до 50%</p>
+            </div>
+          </div>
+
+          <div class="calculator_main_right_item last">
+            <h5>Стоимость монтажа на 1 площадку</h5>
+            <div class="calculator_main_right_item_wrap">
+              <div class="calculator_main_right_item_wrap_result">
+                <span id="oneSiteText"></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="calculator_interval">
+        <div class="calculator_interval_item">
+          <h5>Прибыль с продажи:</h5>
+          <span id="salesProfit">700 000 ₽</span>
+        </div>
+        <div class="calculator_interval_item">
+          <h5>Прибыль с монтажа:</h5>
+          <span id="profitInstallation">270 000 ₽</span>
+        </div>
+      </div>
+      <div class="calculator_final">
+        <div class="calculator_final_top">
+          <div class="calculator_final_top_left">
+            <h5>Количество продаж за год</h5>
+            <div class="calculator_final_top_left_wrap">
+              <div id="year" class="calculator_final_top_left_wrap_range"></div>
+              <div class="calculator_final_top_left_wrap_text">
+                <span id="yearText">5</span>
+              </div>
+            </div>
+          </div>
+          <div class="calculator_final_top_right">
+            <h5>Итого</h5>
+            <div class="calculator_final_top_right_item">
+              <p>Оборот за год:</p>
+              <span id="turnoverYear">16 200 000 ₽</span>
+            </div>
+            <div class="calculator_final_top_right_item">
+              <p>Прибыль за год:</p>
+              <span id="profitYear">4 850 000 ₽</span>
+            </div>
+            <p class="calculator_final_top_right_month">(<span id="profitMonth">404 166 ₽</span> в месяц)</p>
+          </div>
+        </div>
+      </div>
+      <div class="calculator_plan">
+        <p>Получите план по выходу на прибыль от 400 000 ₽ в мес.</p>
+        <a href="#">Скачать план</a>
+      </div>
+    </div>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/nouislider.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+    <script>
+
+      function numberWithSpaces(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+      }
+
+      var purchase = document.getElementById('purchase');
+
+      noUiSlider.create(purchase, {
+          start: 1000000,
+          step: 10000,
+          connect: 'lower',
+          range: {
+            'min': 1000000,
+            'max': 10000000
+          }
+      });
+
+      var margin = document.getElementById('margin');
+
+      noUiSlider.create(margin, {
+        start: 35,
+        step: 1,
+        connect: 'lower',
+        range: {
+          'min': 35,
+          'max': 70
+        }
+      });
+
+      var customerMargin = document.getElementById('customerMargin');
+
+      noUiSlider.create(customerMargin, {
+        start: 1,
+        step: 1,
+        connect: 'lower',
+        range: {
+          'min': 1,
+          'max': 40
+        }
+      });
+
+      var brigade = document.getElementById('brigade');
+
+      noUiSlider.create(brigade, {
+        start: 20,
+        step: 1,
+        connect: 'lower',
+        range: {
+          'min': 20,
+          'max': 70
+        }
+      });
+
+      var year = document.getElementById('year');
+
+      noUiSlider.create(year, {
+        start: 1,
+        step: 1,
+        connect: 'lower',
+        range: {
+          'min': 1,
+          'max': 15
+        }
+      });
+
+      purchase.noUiSlider.on('update', function( values, handle ) {
+        var value = Math.round(purchase.noUiSlider.get());
+        var resultText = numberWithSpaces(value) + ' ₽';
+        $("#purchaseText").text(resultText);
+        var marginValue = Math.round(margin.noUiSlider.get());
+        var decimalMarginValue = 1 + marginValue/100;
+        var finalNum = Math.round(value*decimalMarginValue);
+        var finalNumText = numberWithSpaces(finalNum) + ' ₽';
+        $("#saleText").text(finalNumText);
+        
+        var customerPercentMargin = Math.round(customerMargin.noUiSlider.get());
+        var resultCostNum = Math.round(finalNum*(customerPercentMargin/100));
+        var resultCostText = numberWithSpaces(resultCostNum) + ' ₽';
+        $("#oneSiteText").text(resultCostText);
+
+        var salesProfit = finalNum - value;
+        salesProfit = numberWithSpaces(salesProfit) + ' ₽';
+        $("#salesProfit").text(salesProfit);
+        
+        var percentBrigade = Math.round(brigade.noUiSlider.get());
+        percentBrigade = percentBrigade/100;
+
+        var resultProfit =  Math.round(resultCostNum - percentBrigade*resultCostNum);
+
+        var resultProfitText = numberWithSpaces(resultProfit) + ' ₽';
+        $("#profitInstallation").text(resultProfitText);
+
+        var valueYear = Math.round(year.noUiSlider.get());
+
+        var yearSaleText = $("#saleText").text().replace('₽', '');
+        yearSaleText = yearSaleText.replace(/\s/g, '');
+        yearSaleText = parseInt(yearSaleText);
+
+        var yearOneSiteText = $("#oneSiteText").text().replace('₽', '');
+        yearOneSiteText = yearOneSiteText.replace(/\s/g, '');
+        yearOneSiteText = parseInt(yearOneSiteText);
+
+        var resultYear = (yearSaleText+yearOneSiteText)*valueYear;
+
+        salesProfitYear = numberWithSpaces(resultYear) + ' ₽';
+
+        $("#turnoverYear").text(salesProfitYear);
+
+        var yearSalesProfit = $("#salesProfit").text().replace('₽', '');
+        yearSalesProfit = yearSalesProfit.replace(/\s/g, '');
+        yearSalesProfit = parseInt(yearSalesProfit);
+
+        var yearProfitInstallation = $("#profitInstallation").text().replace('₽', '');
+        yearProfitInstallation = yearProfitInstallation.replace(/\s/g, '');
+        yearProfitInstallation = parseInt(yearProfitInstallation);
+
+        var profitSecondYearNum = (yearSalesProfit+yearProfitInstallation)*valueYear;
+
+        profitSecondYear = numberWithSpaces(profitSecondYearNum) + ' ₽';
+
+        $("#profitYear").text(profitSecondYear);
+
+        var perMonth = profitSecondYearNum/12;
+        perMonth = Math.round(perMonth);
+        perMonth = numberWithSpaces(perMonth) + ' ₽';
+        $("#profitMonth").text(perMonth);
+
+      });
+
+      margin.noUiSlider.on('update', function( values, handle ) {
+        var value = Math.round(margin.noUiSlider.get());
+        var resultText = value + '%';
+        $("#marginText").text(resultText);
+        var purchaseValue = Math.round(purchase.noUiSlider.get());
+        var decimalMarginValue = 1 + value/100;
+        var finalNum = Math.round(purchaseValue*decimalMarginValue);
+        var finalNumText = numberWithSpaces(finalNum) + ' ₽';
+        $("#saleText").text(finalNumText);
+
+        var customerPercentMargin = Math.round(customerMargin.noUiSlider.get());
+        var resultCostNum = Math.round(finalNum*(customerPercentMargin/100));
+        var resultCostText = numberWithSpaces(resultCostNum) + ' ₽';
+        $("#oneSiteText").text(resultCostText);
+
+        var salesProfit = finalNum - purchaseValue;
+        salesProfit = numberWithSpaces(salesProfit) + ' ₽';
+        console.log(salesProfit);
+        $("#salesProfit").text(salesProfit);
+
+
+        var percentBrigade = Math.round(brigade.noUiSlider.get());
+        percentBrigade = percentBrigade/100;
+
+        var resultProfit =  Math.round(resultCostNum - percentBrigade*resultCostNum);
+
+        var resultProfitText = numberWithSpaces(resultProfit) + ' ₽';
+        $("#profitInstallation").text(resultProfitText);
+
+        var valueYear = Math.round(year.noUiSlider.get());
+
+        var yearSaleText = $("#saleText").text().replace('₽', '');
+        yearSaleText = yearSaleText.replace(/\s/g, '');
+        yearSaleText = parseInt(yearSaleText);
+
+        var yearOneSiteText = $("#oneSiteText").text().replace('₽', '');
+        yearOneSiteText = yearOneSiteText.replace(/\s/g, '');
+        yearOneSiteText = parseInt(yearOneSiteText);
+
+        var resultYear = (yearSaleText+yearOneSiteText)*valueYear;
+
+        salesProfitYear = numberWithSpaces(resultYear) + ' ₽';
+
+        $("#turnoverYear").text(salesProfitYear);
+
+        var yearSalesProfit = $("#salesProfit").text().replace('₽', '');
+        yearSalesProfit = yearSalesProfit.replace(/\s/g, '');
+        yearSalesProfit = parseInt(yearSalesProfit);
+
+        var yearProfitInstallation = $("#profitInstallation").text().replace('₽', '');
+        yearProfitInstallation = yearProfitInstallation.replace(/\s/g, '');
+        yearProfitInstallation = parseInt(yearProfitInstallation);
+
+        var profitSecondYearNum = (yearSalesProfit+yearProfitInstallation)*valueYear;
+
+        profitSecondYear = numberWithSpaces(profitSecondYearNum) + ' ₽';
+
+        $("#profitYear").text(profitSecondYear);
+
+        var perMonth = profitSecondYearNum/12;
+        perMonth = Math.round(perMonth);
+        perMonth = numberWithSpaces(perMonth) + ' ₽';
+        $("#profitMonth").text(perMonth);
+
+      });
+
+      customerMargin.noUiSlider.on('update', function( values, handle ) {
+        var value = Math.round(customerMargin.noUiSlider.get());
+        var resultText = numberWithSpaces(value) + '%';
+        $("#customerMarginText").text(resultText);
+
+        var saleOnePloshadki = $("#saleText").text().replace('₽', '');
+        saleOnePloshadki = saleOnePloshadki.replace(/\s/g, '');
+        saleOnePloshadki = parseInt(saleOnePloshadki);
+
+        var resultCostNum = Math.round(saleOnePloshadki*(value/100));
+        var resultCostText = numberWithSpaces(resultCostNum) + ' ₽';
+
+        $("#oneSiteText").text(resultCostText);
+
+        var percentBrigade = Math.round(brigade.noUiSlider.get());
+        percentBrigade = percentBrigade/100;
+
+        var resultProfit =  Math.round(resultCostNum - percentBrigade*resultCostNum);
+
+        var resultProfitText = numberWithSpaces(resultProfit) + ' ₽';
+        $("#profitInstallation").text(resultProfitText);
+
+        var valueYear = Math.round(year.noUiSlider.get());
+
+        var yearSaleText = $("#saleText").text().replace('₽', '');
+        yearSaleText = yearSaleText.replace(/\s/g, '');
+        yearSaleText = parseInt(yearSaleText);
+
+        var yearOneSiteText = $("#oneSiteText").text().replace('₽', '');
+        yearOneSiteText = yearOneSiteText.replace(/\s/g, '');
+        yearOneSiteText = parseInt(yearOneSiteText);
+
+        var resultYear = (yearSaleText+yearOneSiteText)*valueYear;
+
+        salesProfitYear = numberWithSpaces(resultYear) + ' ₽';
+
+        $("#turnoverYear").text(salesProfitYear);
+
+        var yearSalesProfit = $("#salesProfit").text().replace('₽', '');
+        yearSalesProfit = yearSalesProfit.replace(/\s/g, '');
+        yearSalesProfit = parseInt(yearSalesProfit);
+
+        var yearProfitInstallation = $("#profitInstallation").text().replace('₽', '');
+        yearProfitInstallation = yearProfitInstallation.replace(/\s/g, '');
+        yearProfitInstallation = parseInt(yearProfitInstallation);
+
+        var profitSecondYearNum = (yearSalesProfit+yearProfitInstallation)*valueYear;
+
+        profitSecondYear = numberWithSpaces(profitSecondYearNum) + ' ₽';
+
+        $("#profitYear").text(profitSecondYear);
+
+        var perMonth = profitSecondYearNum/12;
+        perMonth = Math.round(perMonth);
+        perMonth = numberWithSpaces(perMonth) + ' ₽';
+        $("#profitMonth").text(perMonth);
+
+      });
+
+      brigade.noUiSlider.on('update', function( values, handle ) {
+        var value = Math.round(brigade.noUiSlider.get());
+        var resultText = numberWithSpaces(value) + '%';
+        $("#brigadeText").text(resultText);
+        
+        var oneSiteText = $("#oneSiteText").text();
+        oneSiteText = oneSiteText.replace(/\s/g, '');
+        oneSiteText = parseInt(oneSiteText);
+
+        var percentBrigade = value/100;
+
+        var resultProfit = Math.round(oneSiteText - percentBrigade*oneSiteText);
+
+        var resultProfitText = numberWithSpaces(resultProfit) + ' ₽';
+        $("#profitInstallation").text(resultProfitText);
+
+
+        var valueYear = Math.round(year.noUiSlider.get());
+
+        var yearSalesProfit = $("#salesProfit").text().replace('₽', '');
+        yearSalesProfit = yearSalesProfit.replace(/\s/g, '');
+        yearSalesProfit = parseInt(yearSalesProfit);
+
+        var yearProfitInstallation = $("#profitInstallation").text().replace('₽', '');
+        yearProfitInstallation = yearProfitInstallation.replace(/\s/g, '');
+        yearProfitInstallation = parseInt(yearProfitInstallation);
+
+        var profitSecondYearNum = (yearSalesProfit+yearProfitInstallation)*valueYear;
+
+        profitSecondYear = numberWithSpaces(profitSecondYearNum) + ' ₽';
+
+        $("#profitYear").text(profitSecondYear);
+
+        var perMonth = profitSecondYearNum/12;
+        perMonth = Math.round(perMonth);
+        perMonth = numberWithSpaces(perMonth) + ' ₽';
+        $("#profitMonth").text(perMonth);
+        
+
+      });
+
+      year.noUiSlider.on('update', function( values, handle ) {
+        var valueYear = Math.round(year.noUiSlider.get());
+        $("#yearText").text(valueYear);
+
+        var yearSaleText = $("#saleText").text().replace('₽', '');
+        yearSaleText = yearSaleText.replace(/\s/g, '');
+        yearSaleText = parseInt(yearSaleText);
+
+        var yearOneSiteText = $("#oneSiteText").text().replace('₽', '');
+        yearOneSiteText = yearOneSiteText.replace(/\s/g, '');
+        yearOneSiteText = parseInt(yearOneSiteText);
+
+        var resultYear = (yearSaleText+yearOneSiteText)*valueYear;
+
+        salesProfitYear = numberWithSpaces(resultYear) + ' ₽';
+
+        $("#turnoverYear").text(salesProfitYear);
+
+        var yearSalesProfit = $("#salesProfit").text().replace('₽', '');
+        yearSalesProfit = yearSalesProfit.replace(/\s/g, '');
+        yearSalesProfit = parseInt(yearSalesProfit);
+
+        var yearProfitInstallation = $("#profitInstallation").text().replace('₽', '');
+        yearProfitInstallation = yearProfitInstallation.replace(/\s/g, '');
+        yearProfitInstallation = parseInt(yearProfitInstallation);
+
+        var profitSecondYearNum = (yearSalesProfit+yearProfitInstallation)*valueYear;
+
+        profitSecondYear = numberWithSpaces(profitSecondYearNum) + ' ₽';
+
+        $("#profitYear").text(profitSecondYear);
+
+        var perMonth = profitSecondYearNum/12;
+        perMonth = Math.round(perMonth);
+        perMonth = numberWithSpaces(perMonth) + ' ₽';
+        $("#profitMonth").text(perMonth);
+
+      });
+
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,985 @@
+@font-face {
+  font-family: "TT Norms";
+  src: url("../fonts/TTNorms-Bold.eot");
+  src: local("TT Norms Bold"), local("TTNorms-Bold"), url("../fonts/TTNorms-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/TTNorms-Bold.woff2") format("woff2"), url("../fonts/TTNorms-Bold.woff") format("woff"), url("../fonts/TTNorms-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url("../fonts/TTNorms-ThinItalic.eot");
+  src: local("TT Norms Thin Italic"), local("TTNorms-ThinItalic"), url("../fonts/TTNorms-ThinItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/TTNorms-ThinItalic.woff2") format("woff2"), url("../fonts/TTNorms-ThinItalic.woff") format("woff"), url("../fonts/TTNorms-ThinItalic.ttf") format("truetype");
+  font-weight: 100;
+  font-style: italic;
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url("../fonts/TTNorms-Thin.eot");
+  src: local("TT Norms Thin"), local("TTNorms-Thin"), url("../fonts/TTNorms-Thin.eot?#iefix") format("embedded-opentype"), url("../fonts/TTNorms-Thin.woff2") format("woff2"), url("../fonts/TTNorms-Thin.woff") format("woff"), url("../fonts/TTNorms-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url("../fonts/TTNorms-LightItalic.eot");
+  src: local("TT Norms Light Italic"), local("TTNorms-LightItalic"), url("../fonts/TTNorms-LightItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/TTNorms-LightItalic.woff2") format("woff2"), url("../fonts/TTNorms-LightItalic.woff") format("woff"), url("../fonts/TTNorms-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url("../fonts/TTNorms-ExtraBoldItalic.eot");
+  src: local("TT Norms ExtraBold Italic"), local("TTNorms-ExtraBoldItalic"), url("../fonts/TTNorms-ExtraBoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/TTNorms-ExtraBoldItalic.woff2") format("woff2"), url("../fonts/TTNorms-ExtraBoldItalic.woff") format("woff"), url("../fonts/TTNorms-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url("../fonts/TTNorms-Italic.eot");
+  src: local("TT Norms Italic"), local("TTNorms-Italic"), url("../fonts/TTNorms-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/TTNorms-Italic.woff2") format("woff2"), url("../fonts/TTNorms-Italic.woff") format("woff"), url("../fonts/TTNorms-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url("../fonts/TTNorms-ExtraLight.eot");
+  src: local("TT Norms ExtraLight"), local("TTNorms-ExtraLight"), url("../fonts/TTNorms-ExtraLight.eot?#iefix") format("embedded-opentype"), url("../fonts/TTNorms-ExtraLight.woff2") format("woff2"), url("../fonts/TTNorms-ExtraLight.woff") format("woff"), url("../fonts/TTNorms-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url("../fonts/TTNorms-HeavyItalic.eot");
+  src: local("TT Norms Heavy Italic"), local("TTNorms-HeavyItalic"), url("../fonts/TTNorms-HeavyItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/TTNorms-HeavyItalic.woff2") format("woff2"), url("../fonts/TTNorms-HeavyItalic.woff") format("woff"), url("../fonts/TTNorms-HeavyItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url("../fonts/TTNorms-MediumItalic.eot");
+  src: local("TT Norms Medium Italic"), local("TTNorms-MediumItalic"), url("../fonts/TTNorms-MediumItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/TTNorms-MediumItalic.woff2") format("woff2"), url("../fonts/TTNorms-MediumItalic.woff") format("woff"), url("../fonts/TTNorms-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url("../fonts/TTNorms-BoldItalic.eot");
+  src: local("TT Norms Bold Italic"), local("TTNorms-BoldItalic"), url("../fonts/TTNorms-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/TTNorms-BoldItalic.woff2") format("woff2"), url("../fonts/TTNorms-BoldItalic.woff") format("woff"), url("../fonts/TTNorms-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url("../fonts/TTNorms-Heavy.eot");
+  src: local("TT Norms Heavy"), local("TTNorms-Heavy"), url("../fonts/TTNorms-Heavy.eot?#iefix") format("embedded-opentype"), url("../fonts/TTNorms-Heavy.woff2") format("woff2"), url("../fonts/TTNorms-Heavy.woff") format("woff"), url("../fonts/TTNorms-Heavy.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url("../fonts/TTNorms-Light.eot");
+  src: local("TT Norms Light"), local("TTNorms-Light"), url("../fonts/TTNorms-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/TTNorms-Light.woff2") format("woff2"), url("../fonts/TTNorms-Light.woff") format("woff"), url("../fonts/TTNorms-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url("../fonts/TTNorms-Medium.eot");
+  src: local("TT Norms Medium"), local("TTNorms-Medium"), url("../fonts/TTNorms-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/TTNorms-Medium.woff2") format("woff2"), url("../fonts/TTNorms-Medium.woff") format("woff"), url("../fonts/TTNorms-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url("../fonts/TTNorms-ExtraBold.eot");
+  src: local("TT Norms ExtraBold"), local("TTNorms-ExtraBold"), url("../fonts/TTNorms-ExtraBold.eot?#iefix") format("embedded-opentype"), url("../fonts/TTNorms-ExtraBold.woff2") format("woff2"), url("../fonts/TTNorms-ExtraBold.woff") format("woff"), url("../fonts/TTNorms-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url("../fonts/TTNorms-ExtraLightItalic.eot");
+  src: local("TT Norms ExtraLight Italic"), local("TTNorms-ExtraLightItalic"), url("../fonts/TTNorms-ExtraLightItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/TTNorms-ExtraLightItalic.woff2") format("woff2"), url("../fonts/TTNorms-ExtraLightItalic.woff") format("woff"), url("../fonts/TTNorms-ExtraLightItalic.ttf") format("truetype");
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url("../fonts/TTNorms-Regular.eot");
+  src: local("TT Norms Regular"), local("TTNorms-Regular"), url("../fonts/TTNorms-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/TTNorms-Regular.woff2") format("woff2"), url("../fonts/TTNorms-Regular.woff") format("woff"), url("../fonts/TTNorms-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url("../fonts/TTNorms-BlackItalic.eot");
+  src: local("TT Norms Black Italic"), local("TTNorms-BlackItalic"), url("../fonts/TTNorms-BlackItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/TTNorms-BlackItalic.woff2") format("woff2"), url("../fonts/TTNorms-BlackItalic.woff") format("woff"), url("../fonts/TTNorms-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: "TT Norms";
+  src: url("../fonts/TTNorms-Black.eot");
+  src: local("TT Norms Black"), local("TTNorms-Black"), url("../fonts/TTNorms-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/TTNorms-Black.woff2") format("woff2"), url("../fonts/TTNorms-Black.woff") format("woff"), url("../fonts/TTNorms-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  overflow-x: hidden;
+  position: relative;
+  background-color: gray;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 50px 0px;
+}
+
+ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  border: none;
+  -moz-appearance: textfield;
+}
+
+input[type=number]:focus {
+  outline: none;
+}
+
+input[type=tel] {
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+input[type=text] {
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+input[type=tel]:focus {
+  outline: none;
+}
+
+input[type=text]:focus {
+  outline: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+textarea {
+  border: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  resize: none;
+}
+
+select {
+  outline: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0px;
+}
+
+button:focus {
+  border: none;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+div {
+  -webkit-tap-highlight-color: transparent;
+}
+
+div:focus {
+  outline: none;
+}
+
+input {
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+.calculator {
+  background-color: #fff;
+  width: calc(100% - 32px);
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 16px 12px;
+}
+.calculator_main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+.calculator_main::after {
+  content: "";
+  position: absolute;
+  left: calc(50% - 7px);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 0px;
+  height: calc(100% + 16px);
+  width: 1px;
+  background-color: #E5E5EB;
+}
+.calculator_main::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -16px;
+  width: 100%;
+  height: 1px;
+  background-color: #E5E5EB;
+}
+.calculator_main_left {
+  width: calc(50% - 7px);
+}
+.calculator_main_left h3 {
+  font-family: "TT Norms";
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 24px;
+  color: #000000;
+}
+.calculator_main_left_item {
+  margin-top: 16px;
+}
+.calculator_main_left_item h5 {
+  font-family: "TT Norms";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+  min-height: 32px;
+}
+.calculator_main_left_item_wrap {
+  width: calc(100% - 14px);
+  margin-top: 20px;
+}
+.calculator_main_left_item_wrap_range {
+  width: 100%;
+}
+.calculator_main_left_item_wrap_result {
+  height: 36px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #CCCDCE;
+  border-radius: 4px;
+  padding: 0px 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.calculator_main_left_item_wrap_result span {
+  font-family: "TT Norms";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+.calculator_main_left_item_wrap p {
+  font-family: "TT Norms";
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  color: #76767A;
+  margin-top: 8px;
+}
+.calculator_main_right {
+  width: calc(50% - 7px);
+}
+.calculator_main_right h3 {
+  font-family: "TT Norms";
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 24px;
+  color: #000000;
+}
+.calculator_main_right_item {
+  margin-top: 16px;
+}
+.calculator_main_right_item h5 {
+  font-family: "TT Norms";
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+  min-height: 32px;
+}
+.calculator_main_right_item_wrap {
+  width: calc(100% - 14px);
+  margin-top: 20px;
+}
+.calculator_main_right_item_wrap_range {
+  width: 100%;
+}
+.calculator_main_right_item_wrap_result {
+  height: 36px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #CCCDCE;
+  border-radius: 4px;
+  padding: 0px 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.calculator_main_right_item_wrap_result span {
+  font-family: "TT Norms";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+.calculator_main_right_item_wrap p {
+  font-family: "TT Norms";
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  color: #76767A;
+  margin-top: 8px;
+}
+.calculator_main_right_item.last .calculator_main_right_item_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.calculator_main_right_item.last .calculator_main_right_item_wrap_result {
+  margin-top: 0px;
+}
+.calculator_main_right_item.last .calculator_main_right_item_wrap p {
+  margin-top: 0px;
+  margin-left: 10px;
+}
+.calculator_interval {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  margin-top: 28px;
+}
+.calculator_interval_item {
+  width: calc(50% - 7px);
+}
+.calculator_interval_item h5 {
+  font-family: "TT Norms";
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  margin-bottom: 4px;
+}
+.calculator_interval_item span {
+  font-family: "TT Norms";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  color: #5B3CE1;
+}
+.calculator_final {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px 20px 24px 20px;
+  background: #F7F7F9;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin-top: 12px;
+}
+.calculator_final_top_left h5 {
+  font-family: "TT Norms";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+}
+.calculator_final_top_left_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-top: 20px;
+}
+.calculator_final_top_left_wrap_range {
+  width: 124px;
+}
+.calculator_final_top_left_wrap_text {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 54px;
+  height: 36px;
+  background: #FFFFFF;
+  border: 1px solid #CCCDCE;
+  border-radius: 4px;
+  margin-left: 20px;
+}
+.calculator_final_top_left_wrap_text span {
+  font-family: "TT Norms";
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+.calculator_final_top_right {
+  margin-top: 20px;
+}
+.calculator_final_top_right h5 {
+  font-family: "TT Norms";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  text-transform: uppercase;
+  color: #000000;
+}
+.calculator_final_top_right_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-top: 8px;
+}
+.calculator_final_top_right_item p {
+  font-family: "TT Norms";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 25px;
+  color: #000000;
+  margin-right: 16px;
+  width: 108px;
+}
+.calculator_final_top_right_item span {
+  font-family: "TT Norms";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  color: #5B3CE1;
+}
+.calculator_final_top_right_month {
+  font-family: "TT Norms";
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 17px;
+  color: #282828;
+  margin-left: 124px;
+}
+.calculator_plan {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #EFEFF3;
+  border-radius: 0px 0px 8px 8px;
+  padding: 14px 20px 20px 20px;
+}
+.calculator_plan p {
+  font-family: "TT Norms";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+}
+.calculator_plan a {
+  display: block;
+  width: 100%;
+  height: 44px;
+  background: #5B3CE1;
+  border-radius: 6px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "TT Norms";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  color: #FFFFFF;
+  line-height: 44px;
+  margin-top: 12px;
+}
+@media (min-width: 768px) {
+  .calculator {
+    width: calc(100% - 60px);
+    -webkit-box-shadow: 0px 4px 30px rgba(117, 107, 159, 0.12);
+            box-shadow: 0px 4px 30px rgba(117, 107, 159, 0.12);
+    border-radius: 16px;
+    padding: 20px 30px 30px 30px;
+  }
+  .calculator_main_left {
+    width: calc(50% - 10px);
+  }
+  .calculator_main_left h3 {
+    font-size: 34px;
+    line-height: 48px;
+  }
+  .calculator_main_left_item h5 {
+    font-size: 20px;
+    line-height: 28px;
+    min-height: 56px;
+  }
+  .calculator_main_left_item_wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .calculator_main_left_item_wrap_range {
+    margin-bottom: 28px;
+  }
+  .calculator_main_left_item_wrap_result {
+    height: 52px;
+    border-radius: 8px;
+    padding: 0px 16px;
+    margin-top: 0px;
+  }
+  .calculator_main_left_item_wrap_result span {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .calculator_main_left_item_wrap p {
+    font-size: 14px;
+    line-height: 18px;
+    width: calc(100% - 94px);
+    margin-top: 0px;
+  }
+  .calculator_main_right {
+    width: calc(50% - 10px);
+  }
+  .calculator_main_right h3 {
+    font-size: 34px;
+    line-height: 48px;
+  }
+  .calculator_main_right_item h5 {
+    font-size: 20px;
+    line-height: 28px;
+    min-height: 56px;
+  }
+  .calculator_main_right_item_wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .calculator_main_right_item_wrap_range {
+    margin-bottom: 28px;
+  }
+  .calculator_main_right_item_wrap_result {
+    height: 52px;
+    border-radius: 8px;
+    padding: 0px 12px;
+    margin-top: 0px;
+  }
+  .calculator_main_right_item_wrap_result span {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .calculator_main_right_item_wrap p {
+    font-size: 14px;
+    line-height: 18px;
+    width: calc(100% - 94px);
+    margin-top: 0px;
+  }
+  .calculator_main::after {
+    left: calc(50% - 10px);
+    height: calc(100% + 25px);
+  }
+  .calculator_main::before {
+    bottom: -25px;
+  }
+  .calculator_interval {
+    margin-top: 50px;
+  }
+  .calculator_interval_item {
+    width: calc(50% - 10px);
+  }
+  .calculator_interval_item h5 {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 0px;
+  }
+  .calculator_interval_item span {
+    font-size: 30px;
+    line-height: 42px;
+  }
+  .calculator_final {
+    margin-top: 25px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding: 30px 32px;
+  }
+  .calculator_final_top_left h5 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .calculator_final_top_left_wrap_range {
+    width: 162px;
+  }
+  .calculator_final_top_left_wrap_text {
+    width: 62px;
+    height: 52px;
+    margin-left: 20px;
+  }
+  .calculator_final_top_left_wrap_text span {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .calculator_final_top_right h5 {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 6px;
+  }
+  .calculator_final_top_right_item {
+    margin-top: 0px;
+  }
+  .calculator_final_top_right_item p {
+    font-size: 20px;
+    line-height: 37px;
+    width: 160px;
+  }
+  .calculator_final_top_right_item span {
+    font-size: 30px;
+    line-height: 42px;
+  }
+  .calculator_final_top_right_month {
+    margin-left: 176px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .calculator_plan {
+    padding: 25px 30px 35px 30px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+  }
+  .calculator_plan p {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .calculator_plan a {
+    height: 52px;
+    line-height: 52px;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  .calculator {
+    width: 1170px;
+    padding: 50px 60px 60px 60px;
+  }
+  .calculator_main_left {
+    width: calc(50% - 30px);
+  }
+  .calculator_main_left_item h5 {
+    min-height: auto;
+  }
+  .calculator_main_left_item_wrap {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .calculator_main_left_item_wrap_range {
+    width: 180px;
+    margin-bottom: 0px;
+  }
+  .calculator_main_left_item_wrap_result {
+    width: 180px;
+    margin-left: 30px;
+  }
+  .calculator_main_left_item_wrap p {
+    width: 176px;
+    margin-left: 20px;
+  }
+  .calculator_main_left_item.last .calculator_main_left_item_wrap_result {
+    margin-left: 0px;
+  }
+  .calculator_main_right {
+    width: calc(50% - 30px);
+  }
+  .calculator_main_right_item h5 {
+    min-height: auto;
+  }
+  .calculator_main_right_item_wrap {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .calculator_main_right_item_wrap_range {
+    width: 180px;
+    margin-bottom: 0px;
+  }
+  .calculator_main_right_item_wrap_result {
+    width: 180px;
+    margin-left: 30px;
+  }
+  .calculator_main_right_item_wrap p {
+    width: 176px;
+    margin-left: 20px;
+  }
+  .calculator_main_right_item.last .calculator_main_right_item_wrap_result {
+    margin-left: 0px;
+  }
+  .calculator_main::after {
+    left: calc(50% - 30px);
+  }
+  .calculator_interval_item {
+    width: calc(50% - 30px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .calculator_interval_item h5 {
+    margin-right: 20px;
+    line-height: 35px;
+  }
+  .calculator_final {
+    padding: 40px 120px 30px 50px;
+    margin-top: 40px;
+  }
+  .calculator_final_top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .calculator_final_top_left_wrap_range {
+    width: 133px;
+  }
+  .calculator_final_top_left_wrap_text {
+    margin-left: 30px;
+  }
+  .calculator_final_top_right {
+    margin-top: 0px;
+  }
+  .calculator_final_top_right_item span {
+    display: block;
+    width: 220px;
+  }
+  .calculator_plan {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 24px 30px 24px 48px;
+  }
+  .calculator_plan a {
+    width: 176px;
+    margin-top: 0px;
+    margin-left: 135px;
+  }
+}
+
+.calc_percent {
+  width: 54px;
+  padding: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+@media (min-width: 768px) {
+  .calc_percent {
+    width: 74px;
+  }
+}
+
+.noUi-connects {
+  height: 4px;
+}
+
+.noUi-connect {
+  background: #5B3CE1;
+  height: 4px;
+}
+
+.noUi-handle {
+  height: 18px;
+  width: 18px;
+  top: -5px;
+  right: -9px; /* half the width */
+  border-radius: 9px;
+}
+
+.noUi-horizontal {
+  height: 4px;
+  background: #CCCDCE;
+  border-radius: 2px;
+}
+
+.noUi-horizontal .noUi-handle {
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+  width: 20px;
+  height: 20px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 50%;
+  cursor: pointer;
+  top: -8px;
+}
+
+.noUi-target {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+}
+
+.noUi-handle::before, .noUi-handle::after {
+  display: none;
+}
